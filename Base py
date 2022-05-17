@@ -1,0 +1,21 @@
+def recBase(numero, base):
+    resposta = numero % base
+    if int(numero/base) == 0:
+        return resposta
+    recBase(int(numero/base), base)
+    return recBase(int(numero/base), base)*10 + resposta
+    
+def iteBase(numero, base):
+    resposta = 0
+    x = -1
+    while numero != 0:
+        x = x + 1
+        resposta = resposta/10 + numero % base
+        numero = int(numero/base)
+    return round(resposta * 10**x)
+        
+def base10(numero, base):
+                    
+                
+print(recBase(19, 2))
+print(iteBase(278, 16))
